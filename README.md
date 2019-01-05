@@ -1,6 +1,4 @@
 ### Firebase&Admob 全功能汉化 Demo APP：
--------
-
 
 -------
 ### Android AdMob document：
