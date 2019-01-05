@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">AmapWeather</string>
-
-    <string name="temperature_signal">"℃ "</string>
+    <string name="app_name">FirebaseApp</string>
 
     <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
         weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
