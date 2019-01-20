@@ -29,7 +29,9 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
-
+        <activity
+            android:name="com.gary.firebase.admob.BannerAdActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name="com.gary.firebase.admob.InterstitialAdActivity"
             android:theme="@style/AppTheme" />

@@ -10,19 +10,20 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
+
 /**
  * Created by GaryCao on 2018/11/16.
  *
  * Admob 横幅广告单元显示
  */
-public abstract class BannerAdActivity extends AppCompatActivity {
+public class BannerAdActivity extends AppCompatActivity {
     private AdView mAdView;
     private AdListener mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onCreateNew(savedInstanceState);
+        setContentView(R.layout.activity_ad_banner);
         initAdMob();
     }
 
@@ -36,6 +37,4 @@ public abstract class BannerAdActivity extends AppCompatActivity {
         mListener = new AdListenerImpl();
         mAdView.setAdListener(mListener);
     }
-
-    public abstract void onCreateNew(Bundle savedInstanceState);
 }

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.gary.firebase.admob.BannerAdActivity;
 import com.gary.firebase.admob.InterstitialAdActivity;
 import com.gary.firebase.admob.RewardedVideoAdActivity;
 import com.gary.firebase.analytics.AnalyticsActivity;
@@ -20,7 +21,7 @@ import com.gary.firebase.remoteconfig.RemoteConfigActivity;
 import com.gary.firebase.utils.FirebaseUtils;
 
 public class FirebaseListActivity extends AppCompatActivity implements View.OnClickListener {
-
+    private Button bannerAdBtn;
     private Button interstitialAdBtn;
     private Button rewardedVideoAdBtn;
 
@@ -40,6 +41,9 @@ public class FirebaseListActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fb_list);
+
+        bannerAdBtn = findViewById(R.id.banner_btn);
+        bannerAdBtn.setOnClickListener(this);
 
         interstitialAdBtn = findViewById(R.id.interstitial_btn);
         interstitialAdBtn.setOnClickListener(this);
@@ -82,6 +86,9 @@ public class FirebaseListActivity extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
+            case R.id.banner_btn:
+                FirebaseUtils.startActivity(this, BannerAdActivity.class);
+                break;
             case R.id.interstitial_btn:
                 FirebaseUtils.startActivity(this, InterstitialAdActivity.class);
                 break;

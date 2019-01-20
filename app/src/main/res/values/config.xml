@@ -8,8 +8,9 @@
 
     <!--admob amap registered id-->
     <string name="admob_app_id">"ca-app-pub-4914208157657122~8536527115"</string>
-    <string name="admob_banner_ads_id">"ca-app-pub-4914208157657122/7287433748"</string>
-    <string name="admob_interstitial_ads_id">"ca-app-pub-4914208157657122/6304570273"</string>
+    <!---->
+    <string name="admob_banner_ads_id">"ca-app-pub-4914208157657122/2401352813"</string>
+    <string name="admob_interstitial_ads_id">"ca-app-pub-4914208157657122/4185622407"</string>
     <!--激励广告暂不能用注册ID-->
-    <!--<string name="admob_rewarded_video_ads_id">"ca-app-pub-4914208157657122/1492711817"</string>-->
+    <!--<string name="admob_rewarded_video_ads_id">"ca-app-pub-4914208157657122/9793172308"</string>-->
 </resources>

@@ -8,6 +8,37 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:445812538997:android:de2b8c3d1f566921",
+        "android_client_info": {
+          "package_name": "com.gary.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445812538997-mu3v9ari060fjg51u613ftgjpaa7matr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClVkNxJFgj3xRzyW2USCcfI40380GO7H8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:445812538997:android:f3225a8659702a2c",
         "android_client_info": {
           "package_name": "com.gary.weatherdemo"
@@ -20,6 +51,14 @@
           "android_info": {
             "package_name": "com.gary.weatherdemo",
             "certificate_hash": "dd03394c0c0bdf7abf6d6349b11ccac1c052a46d"
+          }
+        },
+        {
+          "client_id": "445812538997-2k7qsavkpirco5dgt39rkd23vde6dm17.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gary.weatherdemo",
+            "certificate_hash": "71bed6db09c96e5e5ff638487efc521f90d54a6b"
           }
         },
         {
