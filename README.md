@@ -1,4 +1,5 @@
-### Firebase&Admob 全功能汉化 Demo APP：
+### Firebase&Admob 全功能汉化APP：
+- 开源背景：HomeWork，代码资源来自github android firebase ，结合官网功能+SDK集成文档，添加代码汉化+功能实践总结。
 
 -------
 ### Android AdMob document：
