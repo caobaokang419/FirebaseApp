@@ -53,9 +53,7 @@ public class RemoteConfigActivity extends AppCompatActivity {
             }
         });
 
-        // Get Remote Config instance.
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
-
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
                 .setDeveloperModeEnabled(BuildConfig.DEBUG)
                 .build();
@@ -69,16 +67,7 @@ public class RemoteConfigActivity extends AppCompatActivity {
     }
 
     private void fetchRemoteConfigs() {
-        displayLocalConfigInfos();
-
-        long cacheExpiration = 3600; // 1 hour in seconds.
-        // If your app is using developer mode, cacheExpiration is set to 0, so each fetch will
-        // retrieve values from the service.
-        //TODO:
-        if (mFirebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled()) {
-            cacheExpiration = 0;
-        }
-
+        displayLocalConfigInfos();//Step3: 加载配置，刷新UI
         mFirebaseRemoteConfig.fetch(cacheExpiration)
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
@@ -93,30 +82,11 @@ public class RemoteConfigActivity extends AppCompatActivity {
                             Toast.makeText(RemoteConfigActivity.this, "Fetch Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
-                        displayRemoteConfigInfos();
+                        displayConfigInfos(); //Step5: 重新加载配置，刷新UI
                     }
                 });
     }
 
-    /**
-     * 加载本地配置
-     */
-    private void displayLocalConfigInfos() {
-        //Step3: local configs
-        displayConfigInfos();
-    }
-
-    /**
-     * 加载云端配置
-     */
-    private void displayRemoteConfigInfos() {
-        //Step5: 刷新Remote configs
-        displayConfigInfos();
-    }
-
-    /**
-     * 本地+云端配置加载方法一致
-     */
     private void displayConfigInfos() {
         if (mFirebaseRemoteConfig.getBoolean(WELCOME_MESSAGE_CAPS_KEY)) {
             mWelcomeTextView.setAllCaps(true);
