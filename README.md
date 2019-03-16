@@ -7,6 +7,12 @@
 - 项目分支：从[WeatherApp](https://github.com/caobaokang419/WeatherApp) 中拆分迁移至此，单独维护。
 
 -------
+### 博客专栏：
+- [CSDN博客专栏1：Firebase实战：入门到精通（Android篇））](https://blog.csdn.net/cbk861110/column/info/33806)
+
+
+
+-------
 ### Android AdMob document：
 - [AdMob（Google移动广告）SDK指南](https://developers.google.com/admob/android/quick-start?hl=zh-CN#import_the_mobile_ads_sdk)
 - [Banner(横幅广告)](https://developers.google.com/admob/android/banner?hl=zh-CN)
