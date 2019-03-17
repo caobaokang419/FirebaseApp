@@ -27,10 +27,20 @@
 ### Android Firebase document：
 - [Firebase 集成指南](https://developers.google.com/firebase/docs/android/setup?hl=zh-CN)
 - [Analytics(分析)](https://firebase.google.com/docs/analytics/?hl=zh-CN)
-- [Crash Report(报错上报)](https://firebase.google.com/docs/crashlytics/?hl=zh-CN)
+- [Crashlytics(报错上报)](https://firebase.google.com/docs/crashlytics/?hl=zh-CN)
+- [Performance Monitoring(性能监控服务)](https://firebase.google.com/docs/perf-mon/)
+
 - [Remote Config(远程配置)](https://firebase.google.com/docs/cloud-messaging/?hl=zh-CN)
 - [Cloud Message(云消息)](https://firebase.google.com/docs/remote-config/?hl=zh-CN)
 - [Auth(身份认证)](https://firebase.google.com/docs/auth/?hl=zh-CN)
+
+- [Dynamic-links(动态链接)](https://firebase.google.com/docs/dynamic-links/)
+- [App Indexing](https://firebase.google.com/docs/app-indexing/)
+- [Invite(邀请)](https://firebase.google.com/docs/invites/)
+
+- [Dynamic-links(动态链接)](https://firebase.google.com/docs/dynamic-links/)
+- [App Indexing](https://firebase.google.com/docs/app-indexing/)
+- [Invite(邀请)](https://firebase.google.com/docs/invites/)
 
 
 -------
