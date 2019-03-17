@@ -20,7 +20,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 /**
  * Created by GaryCao on 2018/11/16.
- *
+ * <p>
  * FCM：Firebase云推送
  */
 public class FcmActivity extends AppCompatActivity {
@@ -34,7 +34,7 @@ public class FcmActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             // Create channel to show notifications.
-            String channelId  = getString(R.string.default_notification_channel_id);
+            String channelId = getString(R.string.default_notification_channel_id);
             String channelName = getString(R.string.default_notification_channel_name);
             NotificationManager notificationManager =
                     getSystemService(NotificationManager.class);
@@ -42,14 +42,13 @@ public class FcmActivity extends AppCompatActivity {
                     channelName, NotificationManager.IMPORTANCE_LOW));
         }
 
-        // 当Notification的类型是message+data时，data在此处理（点击系统通知触发启动Activity时）
+        // 当Notification的类型是message+data时，data在此处理（点击fcm通知时自动触发启动Activity时）
         if (getIntent().getExtras() != null) {
             for (String key : getIntent().getExtras().keySet()) {
                 Object value = getIntent().getExtras().get(key);
                 Log.d(TAG, "Key: " + key + " Value: " + value);
             }
         }
-
 
         //应用侧上报：订阅主题："Weather"
         Button subscribeButton = findViewById(R.id.subscribeButton);

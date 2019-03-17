@@ -68,7 +68,7 @@ public class FirebaseListActivity extends AppCompatActivity implements AdapterVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fb_auth);
+        setContentView(R.layout.activity_main_ui);
 
         // Set up ListView and Adapter
         ListView listView = findViewById(R.id.listView);
@@ -109,7 +109,7 @@ public class FirebaseListActivity extends AppCompatActivity implements AdapterVi
             }
 
             ((TextView) view.findViewById(android.R.id.text1)).setText(mClasses[position].getSimpleName());
-            ((TextView) view.findViewById(android.R.id.text2)).setText(mDescriptionIds[position]);
+            //((TextView) view.findViewById(android.R.id.text2)).setText(mDescriptionIds[position]);
 
             return view;
         }

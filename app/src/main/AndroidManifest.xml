@@ -29,6 +29,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
+
         <activity
             android:name=".admob.BannerAdActivity"
             android:label="@string/admob_banner_label"
@@ -43,16 +44,9 @@
             android:theme="@style/AppTheme" />
 
         <!-- FCM -->
-        <service android:name=".fcm.FCMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-
         <!--
-            APP处于前台时：可以在onMessageReceived（）全权处理消息如自定义notification : large_icon , small_icon , color .
-            APP处于后台时：由系统通知处理这部分显示，只可以在Manifest定义 : icon、color
-        -->
+            APP处于前台时：可以在FCMessagingService.onMessageReceived（）全权处理消息如自定义notification : large_icon , small_icon , color .
+            APP处于后台时：由系统通知处理这部分显示，只可以在Manifest定义 : icon、color-->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_stat_ic_notification" />
@@ -65,11 +59,18 @@
             android:label="@string/fb_cloud_message_label"
             android:theme="@style/AppTheme" />
 
+        <service android:name=".fcm.FCMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <!-- Remote Config -->
         <activity
             android:name=".remoteconfig.RemoteConfigActivity"
             android:label="@string/fb_remote_config_label"
             android:theme="@style/AppTheme" />
+
 
         <!-- Crash Report -->
         <activity
@@ -215,8 +216,8 @@
 
         <activity
             android:name=".indexing.IndexingMainActivity"
-            android:label="@string/fb_indexing_label"
             android:exported="true"
+            android:label="@string/fb_indexing_label"
             android:launchMode="singleTop">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
