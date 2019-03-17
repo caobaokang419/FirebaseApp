@@ -67,7 +67,9 @@ public class RemoteConfigActivity extends AppCompatActivity {
     }
 
     private void fetchRemoteConfigs() {
-        displayLocalConfigInfos();//Step3: 加载配置，刷新UI
+        displayConfigInfos();//Step3: 加载配置，刷新UI
+
+        long cacheExpiration = 3600; // 1 hour in seconds.
         mFirebaseRemoteConfig.fetch(cacheExpiration)
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override

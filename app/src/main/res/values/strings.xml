@@ -3,7 +3,7 @@
 
     <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
         weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
-        InstanceID token to logcat.</string>
+        InstanceID token to logcat.</string>desc_google_sign_in
     <string name="subscribe_to_weather">FCM订阅主题</string>
     <string name="log_token">FCM设备令牌</string>
 
@@ -170,4 +170,21 @@
     <string name="btn_add">添加索引</string>
     <string name="btn_remove">移除索引</string>
     <string name="btn_clear">清空索引</string>
+
+    <string name="admob_banner_label">Admob Banner</string>
+    <string name="admob_interstitial_label">Admob interstitial</string>
+    <string name="admob_rewarded_video_label">Admob rewarded video</string>
+
+    <string name="fb_remote_config_label">Remote config</string>
+    <string name="fb_cloud_message_label">Cloud message</string>
+
+    <string name="fb_crash_report_label">Crash report</string>
+    <string name="fb_performance_label">Performance</string>
+    <string name="fb_analytics_label">Analytics</string>
+
+    <string name="fb_auth_label">Auth</string>
+    <string name="fb_inappmsg_label">InApp msg</string>
+    <string name="fb_invite_label">Invite</string>
+    <string name="fb_dynamicLink_label">DynamicLink</string>
+    <string name="fb_indexing_label">Indexing</string>
 </resources>

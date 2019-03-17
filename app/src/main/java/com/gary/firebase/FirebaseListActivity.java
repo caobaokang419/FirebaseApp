@@ -1,9 +1,16 @@
 package com.gary.firebase;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.gary.firebase.admob.BannerAdActivity;
 import com.gary.firebase.admob.InterstitialAdActivity;
@@ -18,115 +25,98 @@ import com.gary.firebase.indexing.IndexingMainActivity;
 import com.gary.firebase.invite.InviteMainActivity;
 import com.gary.firebase.performance.PerformanceMainActivity;
 import com.gary.firebase.remoteconfig.RemoteConfigActivity;
-import com.gary.firebase.utils.FirebaseUtils;
 
-public class FirebaseListActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button bannerAdBtn;
-    private Button interstitialAdBtn;
-    private Button rewardedVideoAdBtn;
+import java.util.HashMap;
+import java.util.Map;
 
-    private Button remoteConfigBtn;
-    private Button fcmBtn;
-    private Button analyticsBtn;
-    private Button crashLogBtn;
-    private Button authBtn;
+public class FirebaseListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    private static Map<Class, String> mUIDatas = new HashMap<Class, String>();
 
-    private Button inappmessageBtn;
-    private Button inviteBtn;
-    private Button dynamiclinkBtn;
-    private Button indexingBtn;
-    private Button performanceBtn;
+    static {
+        mUIDatas.put(BannerAdActivity.class, "Admob Banner");
+        mUIDatas.put(InterstitialAdActivity.class, "Admob Interstitial");
+        mUIDatas.put(RewardedVideoAdActivity.class, "Admob RewardedVideo");
+        mUIDatas.put(RemoteConfigActivity.class, "Remote config");
+        mUIDatas.put(FcmActivity.class, "Fcm");
+        mUIDatas.put(AuthChooseActivity.class, "Auth");
+        mUIDatas.put(InAppMsgMainActivity.class, "InApp msg");
+        mUIDatas.put(InviteMainActivity.class, "Invite");
+        mUIDatas.put(DynamicLinkMainActivity.class, "DynamicLink");
+        mUIDatas.put(IndexingMainActivity.class, "Indexing");
+        mUIDatas.put(PerformanceMainActivity.class, "Performance");
+    }
+
+    private static final Class[] CLASSES = new Class[]{
+            /*Admob*/
+            BannerAdActivity.class,
+            InterstitialAdActivity.class,
+            RewardedVideoAdActivity.class,
+
+            /*Firebase funcs*/
+            RemoteConfigActivity.class,
+            FcmActivity.class,
+            AuthChooseActivity.class,
+            InAppMsgMainActivity.class,
+            InviteMainActivity.class,
+            DynamicLinkMainActivity.class,
+            IndexingMainActivity.class,
+            AnalyticsActivity.class,
+            PerformanceMainActivity.class,
+            CrashReportActivity.class
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fb_list);
+        setContentView(R.layout.activity_fb_auth);
 
-        bannerAdBtn = findViewById(R.id.banner_btn);
-        bannerAdBtn.setOnClickListener(this);
+        // Set up ListView and Adapter
+        ListView listView = findViewById(R.id.listView);
 
-        interstitialAdBtn = findViewById(R.id.interstitial_btn);
-        interstitialAdBtn.setOnClickListener(this);
+        MyArrayAdapter adapter = new MyArrayAdapter(this, android.R.layout.simple_list_item_2, CLASSES);
+        //adapter.setDescriptionIds(DESCRIPTION_IDS);
 
-        rewardedVideoAdBtn = findViewById(R.id.rewarded_video_btn);
-        rewardedVideoAdBtn.setOnClickListener(this);
-
-        remoteConfigBtn = findViewById(R.id.remote_config_btn);
-        remoteConfigBtn.setOnClickListener(this);
-
-        fcmBtn = findViewById(R.id.fcm_btn);
-        fcmBtn.setOnClickListener(this);
-
-        analyticsBtn = findViewById(R.id.analytics_btn);
-        analyticsBtn.setOnClickListener(this);
-
-        crashLogBtn = findViewById(R.id.crash_report_btn);
-        crashLogBtn.setOnClickListener(this);
-
-        authBtn = findViewById(R.id.auth_btn);
-        authBtn.setOnClickListener(this);
-
-        inappmessageBtn = findViewById(R.id.inappmessage_btn);
-        inappmessageBtn.setOnClickListener(this);
-
-        inviteBtn = findViewById(R.id.invite_btn);
-        inviteBtn.setOnClickListener(this);
-
-        dynamiclinkBtn = findViewById(R.id.dynamiclink_btn);
-        dynamiclinkBtn.setOnClickListener(this);
-
-        indexingBtn = findViewById(R.id.indexing_btn);
-        indexingBtn.setOnClickListener(this);
-
-        performanceBtn = findViewById(R.id.performance_btn);
-        performanceBtn.setOnClickListener(this);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
     }
 
     @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        switch (id) {
-            case R.id.banner_btn:
-                FirebaseUtils.startActivity(this, BannerAdActivity.class);
-                break;
-            case R.id.interstitial_btn:
-                FirebaseUtils.startActivity(this, InterstitialAdActivity.class);
-                break;
-            case R.id.rewarded_video_btn:
-                FirebaseUtils.startActivity(this, RewardedVideoAdActivity.class);
-                break;
-            case R.id.remote_config_btn:
-                FirebaseUtils.startActivity(this, RemoteConfigActivity.class);
-                break;
-            case R.id.fcm_btn:
-                FirebaseUtils.startActivity(this, FcmActivity.class);
-                break;
-            case R.id.analytics_btn:
-                FirebaseUtils.startActivity(this, AnalyticsActivity.class);
-                break;
-            case R.id.crash_report_btn:
-                FirebaseUtils.startActivity(this, CrashReportActivity.class);
-                break;
-            case R.id.auth_btn:
-                FirebaseUtils.startActivity(this, AuthChooseActivity.class);
-                break;
-            case R.id.inappmessage_btn:
-                FirebaseUtils.startActivity(this, InAppMsgMainActivity.class);
-                break;
-            case R.id.invite_btn:
-                FirebaseUtils.startActivity(this, InviteMainActivity.class);
-                break;
-            case R.id.dynamiclink_btn:
-                FirebaseUtils.startActivity(this, DynamicLinkMainActivity.class);
-                break;
-            case R.id.performance_btn:
-                FirebaseUtils.startActivity(this, PerformanceMainActivity.class);
-                break;
-            case R.id.indexing_btn:
-                FirebaseUtils.startActivity(this, /*App*/IndexingMainActivity.class);
-                break;
-            default:
-                break;
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Class clicked = CLASSES[position];
+        startActivity(new Intent(this, clicked));
+    }
+
+    public static class MyArrayAdapter extends ArrayAdapter<Class> {
+
+        private Context mContext;
+        private Class[] mClasses;
+        private int[] mDescriptionIds;
+
+        public MyArrayAdapter(Context context, int resource, Class[] objects) {
+            super(context, resource, objects);
+
+            mContext = context;
+            mClasses = objects;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+                view = inflater.inflate(android.R.layout.simple_list_item_2, null);
+            }
+
+            ((TextView) view.findViewById(android.R.id.text1)).setText(mClasses[position].getSimpleName());
+            ((TextView) view.findViewById(android.R.id.text2)).setText(mDescriptionIds[position]);
+
+            return view;
+        }
+
+        public void setDescriptionIds(int[] descriptionIds) {
+            mDescriptionIds = descriptionIds;
         }
     }
 }
+

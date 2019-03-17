@@ -15,7 +15,7 @@
 
         <!-- Firebase -->
         <activity
-            android:name="com.gary.firebase.FirebaseListActivity"
+            android:name=".FirebaseListActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,17 +30,20 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
         <activity
-            android:name="com.gary.firebase.admob.BannerAdActivity"
+            android:name=".admob.BannerAdActivity"
+            android:label="@string/admob_banner_label"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.gary.firebase.admob.InterstitialAdActivity"
+            android:name=".admob.InterstitialAdActivity"
+            android:label="@string/admob_interstitial_label"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.gary.firebase.admob.RewardedVideoAdActivity"
+            android:name=".admob.RewardedVideoAdActivity"
+            android:label="@string/admob_rewarded_video_label"
             android:theme="@style/AppTheme" />
 
         <!-- FCM -->
-        <service android:name="com.gary.firebase.fcm.FCMessagingService">
+        <service android:name=".fcm.FCMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -58,44 +61,51 @@
             android:resource="@color/colorAccent" />
 
         <activity
-            android:name="com.gary.firebase.fcm.FcmActivity"
+            android:name=".fcm.FcmActivity"
+            android:label="@string/fb_cloud_message_label"
             android:theme="@style/AppTheme" />
 
         <!-- Remote Config -->
         <activity
-            android:name="com.gary.firebase.remoteconfig.RemoteConfigActivity"
+            android:name=".remoteconfig.RemoteConfigActivity"
+            android:label="@string/fb_remote_config_label"
             android:theme="@style/AppTheme" />
 
         <!-- Crash Report -->
         <activity
-            android:name="com.gary.firebase.crashreport.CrashReportActivity"
+            android:name=".crashreport.CrashReportActivity"
+            android:label="@string/fb_crash_report_label"
             android:theme="@style/AppTheme" />
 
         <!-- Analytics -->
         <activity
-            android:name="com.gary.firebase.analytics.AnalyticsActivity"
+            android:name=".analytics.AnalyticsActivity"
+            android:label="@string/fb_analytics_label"
             android:theme="@style/AppTheme" />
 
         <!-- performance -->
         <activity
-            android:name="com.gary.firebase.performance.PerformanceMainActivity"
+            android:name=".performance.PerformanceMainActivity"
+            android:label="@string/fb_performance_label"
             android:theme="@style/AppTheme" />
 
         <!-- In-app message -->
         <activity
-            android:name="com.gary.firebase.inappmessaging.InAppMsgMainActivity"
+            android:name=".inappmessaging.InAppMsgMainActivity"
+            android:label="@string/fb_inappmsg_label"
             android:theme="@style/AppTheme" />
 
         <!-- Auth -->
         <activity
-            android:name="com.gary.firebase.auth.AuthChooseActivity"
+            android:name=".auth.AuthChooseActivity"
+            android:label="@string/fb_auth_label"
             android:theme="@style/AppThemeActionBar" />
         <activity
-            android:name="com.gary.firebase.auth.CustomAuthActivity"
+            android:name=".auth.CustomAuthActivity"
             android:label="@string/label_custom_auth"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.gary.firebase.auth.GoogleSignInActivity"
+            android:name=".auth.GoogleSignInActivity"
             android:label="@string/label_google_sign_in"
             android:theme="@style/AppTheme" />
         <!--
@@ -105,12 +115,12 @@
             android:label="@string/label_facebook_login" />
         -->
         <activity
-            android:name="com.gary.firebase.auth.EmailPasswordActivity"
+            android:name=".auth.EmailPasswordActivity"
             android:label="@string/label_emailpassword"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name="com.gary.firebase.auth.PasswordlessActivity"
+            android:name=".auth.PasswordlessActivity"
             android:label="@string/label_passwordless"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme">
@@ -126,12 +136,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.gary.firebase.auth.PhoneAuthActivity"
+            android:name=".auth.PhoneAuthActivity"
             android:label="@string/label_phone_auth"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.gary.firebase.auth.AnonymousAuthActivity"
+            android:name=".auth.AnonymousAuthActivity"
             android:label="@string/label_anonymous_auth"
             android:theme="@style/AppTheme" />
         <!--
@@ -144,12 +154,14 @@
 
         <!-- Invite -->
         <activity
-            android:name="com.gary.firebase.invite.InviteMainActivity"
+            android:name=".invite.InviteMainActivity"
+            android:label="@string/fb_invite_label"
             android:theme="@style/AppTheme" />
 
         <!-- dynamic links -->
         <activity
-            android:name="com.gary.firebase.dynamiclinks.DynamicLinkMainActivity"
+            android:name=".dynamiclinks.DynamicLinkMainActivity"
+            android:label="@string/fb_dynamicLink_label"
             android:theme="@style/AppTheme" />
 
         <!-- app indexing -->
@@ -202,7 +214,8 @@
         -->
 
         <activity
-            android:name="com.gary.firebase.indexing.IndexingMainActivity"
+            android:name=".indexing.IndexingMainActivity"
+            android:label="@string/fb_indexing_label"
             android:exported="true"
             android:launchMode="singleTop">
             <intent-filter android:autoVerify="true">
@@ -218,7 +231,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.gary.firebase.indexing.PersonalIndexingActivity"
+            android:name=".indexing.PersonalIndexingActivity"
             android:exported="true"
             android:launchMode="singleTop">
             <intent-filter>
@@ -232,7 +245,7 @@
         </activity>
 
         <receiver
-            android:name="com.gary.firebase.indexing.AppIndexingUpdateReceiver"
+            android:name=".indexing.AppIndexingUpdateReceiver"
             android:exported="true"
             android:permission="com.google.android.gms.permission.APPINDEXING">
             <intent-filter>
@@ -241,7 +254,7 @@
         </receiver>
 
         <service
-            android:name="com.gary.firebase.indexing.AppIndexingService"
+            android:name=".indexing.AppIndexingService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
